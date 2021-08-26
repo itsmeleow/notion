@@ -1,9 +1,11 @@
-import React from "react"
-import { useState } from "react"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import Notes from "./components/Notes"
-import AddNote from "./components/AddNote"
+import React from "react";
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Notes from "./components/Notes";
+import AddNote from "./components/AddNote";
 
 function App() {
   const [notes, setNotes] = useState([
@@ -34,8 +36,11 @@ function App() {
   }
 
   return (
-      <div className="body">
-      <Header />
+      <div className="App">
+      {/* <Header /> */}
+      <Router>
+        <Nav />
+      </Router>
       <AddNote 
         onAdd={addNote}/>
       {notes.length > 0 ? (
