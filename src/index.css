@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 1rem auto;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -12,12 +12,6 @@ body {
   background-color: #000;
   overflow: auto;
 }
-
-::selection {
-  background-color: #cccccc;
-  color: #000000;
-}
-
 
 code {
   color: #fff;
@@ -34,34 +28,25 @@ p {
   color: #cccccc;
 }
 
-
-
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  /* border-bottom: 1px solid #373737; */
-  color: #fff;
-  padding: 1rem auto;
-  position: sticky;
-  top: 0;
+::selection {
+  background-color: #cccccc;
+  color: #000000;
 }
 
 .btn {
   display: flex;
   background: #000000;
   color: #fff;
-  border: 2px solid #373737;
-  padding: 10px 15px;
-  margin: 5px auto;
+  border: 1px solid #242424;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   user-select: none;
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
+
+  margin-right: 1rem;
 }
 
 .btn:focus {
@@ -79,7 +64,7 @@ p {
 
 .event {
   background: #000000;
-  border: 1px solid #242424;
+  border: 1px solid #101010;
   padding: 20px 20px;
   margin: 5px auto;
   border-radius: 5px;
@@ -99,7 +84,6 @@ p {
 .add-form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
 }
 
 .form-control label {
@@ -112,7 +96,7 @@ p {
   padding: 20px 20px;
   background: #000000;
   color: #fff;
-  border: 1px solid #242424;
+  border: 1px solid #101010;
   border-radius: 5px;
   box-sizing: border-box;
   resize: vertical;
@@ -122,33 +106,6 @@ p {
   font-family: inherit;
 }
 
-
 textarea:focus {
   outline: none;
 }
-
-.form-control-check {
-  justify-content: space-between;
-  border: 1px solid #434751;
-  border-radius: 5px;
-  margin: 5px auto;
-  padding: 10px 20px;
-  box-sizing: border-box;
-}
-
-.form-control-check label {
-  flex: 1;
-}
-
-.form-control-check input, Button {
-  flex: 1;
-  display: inline-block;
-  margin: 5px auto;
-}
-
-footer {
-  display: flex;
-  text-align: center;
-  margin: 50px;
-}
-

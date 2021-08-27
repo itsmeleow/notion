@@ -1,13 +1,16 @@
-
 export const NavData = [
     {
-        title: 'Notes',
+        title: 'notes',
         path: '/notes',
-        subNav: [
+        navSub: [
             {
-                title: 'Journal',
-                path: '/notes/journal'
+                title: 'important',
+                path: '/notes/important'
             }
         ]
+    },
+    {
+        title: 'trash',
+        path: '/trash',
     }
 ]

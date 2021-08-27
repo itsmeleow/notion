@@ -1,56 +1,71 @@
-import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Header from "./components/Header";
+import styled from "styled-components";
 import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import Notes from "./components/Notes";
-import AddNote from "./components/AddNote";
+import Notes from "../src/pages/Notes";
+import Trash from "../src/pages/Trash";
 
 function App() {
-  const [notes, setNotes] = useState([
-    {
-      id: 'nn00qvbg61',
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis sit amet velit eu cursus. Morbi venenatis convallis magna in varius.",
-      date: "8/18/2021, 10:59:59 PM",
-      important: false
-    }
-  ])
-
-  const addNote = (note) => {
-    const id = Math.random().toString(36).substr(2, 10)
-    const newNote = { id, ...note}
-    setNotes([newNote, ...notes])
-  }
-
-  const deleteNote = (id) => {
-    setNotes(notes.filter((note) => note.id !== id));
-  }
-
-  const pinNote = (id) => {
-    setNotes(
-      notes.map((note) =>
-        note.id === id ? { ...note, important: !note.important } : note
-      )
-    )
-  }
-
   return (
-      <div className="App">
-      {/* <Header /> */}
-      <Router>
-        <Nav />
-      </Router>
-      <AddNote 
-        onAdd={addNote}/>
-      {notes.length > 0 ? (
-        <Notes 
-          notes={notes} 
-          onDelete={deleteNote} 
-          onPin={pinNote} />) : ("No Notes: Create some to get started!")}
-      <Footer />
-    </div>
+      <Wrapper>
+      <MainContent>
+        <Router>
+          <Nav />
+          <ContentWrapper>
+            <Switch>
+              <Route exact path='/notes' component={Notes} />
+              <Route exact path='/trash' component={Trash} />
+            </Switch>
+          </ContentWrapper>
+        </Router>
+      </MainContent>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+`;
+
+const MainContent = styled.div`
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  margin-left: 15rem;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @media (max-width: 850px) {
+    margin-left: 0px;
+    padding-top: 65px;
+  }
+`;
+
 
 export default App;
