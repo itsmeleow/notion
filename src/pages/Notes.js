@@ -40,7 +40,7 @@ const Notes = () => {
               onDelete={deleteNote} 
               onPin={pinNote} 
             />
-          ) : ("No Notes: Create some to get started!")}
+          ) : <code>No Notes: Create some to get started!</code>}
         </>
     )
 }

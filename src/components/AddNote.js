@@ -37,8 +37,8 @@ const AddNote = ({ onAdd }) => {
         <MenuButtons>
         <Button
           text={important ? 'important ✓' : 'important ✗'}
-          background={important ? '#ff65b2': '#000000'}
-          borderColor={important ? '#ff71b8' : ''}
+          background={important ? '#fd5d9a': ''}
+          borderColor={important ? '#fd5d9a' : ''}
           checked={important}
           onChange={(e) => setImportant(e.currentTarget.checked)}
           onClick={() => toggleImportant()}

@@ -34,7 +34,7 @@ const Container = styled.nav`
   top: 0;
   left: 0;
   width: 15rem;
-  border-right: 1px solid #101010;
+  border-right: 1px solid #21262d;
   height: 100vh;
   @media (max-width: 850px) {
     display: none;
