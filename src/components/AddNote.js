@@ -22,8 +22,8 @@ const AddNote = ({ onAdd }) => {
   }
  
   return (
-    <form className="add-form">
-      <div className="form-control">
+    <>
+      <FormWrapper>
         <textarea 
           type="text"
           rows={5}
@@ -32,7 +32,7 @@ const AddNote = ({ onAdd }) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-      </div>
+      </FormWrapper>
       <MenuWrapper>
         <MenuButtons>
         <Button
@@ -50,9 +50,33 @@ const AddNote = ({ onAdd }) => {
         />
         </MenuButtons>
       </MenuWrapper>
-    </form>
+    </>
   )
 }
+
+const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 200px;
+  textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 20px 20px;
+    background: #0d1117;
+    color: #fff;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: inherit;
+  }
+  textarea:focus {
+    outline: none;
+}
+`
 
 const MenuWrapper = styled.div`
   display: flex;
